@@ -35,7 +35,7 @@ $('.menu-lista-download').on('click', function(){
     });
 });
 
-$('.card').on('click', function(){
+$('.card').on('click', function() {
     var labelName = $(this).attr('data-name');
     ga('send', {
         hitType: 'event',
@@ -45,6 +45,38 @@ $('.card').on('click', function(){
     });
 });
 
+$('.contato li').on('click', function() {
+    var action = $(this).children('input').attr('id');
+    if ($(this).children('input').val() != "" ) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'contato',
+            eventAction: action,
+            eventLabel: 'clicou'
+        });
+    }
+});
 
+$('.contato li').on('focusout', function() {
+    const valuesList = ["Nome Teste", "email@dominio.com", "(11) 4455-4455"];
+    var action = $(this).children('input').attr('id');
+    if ($(this).children('input').val() != "" && valuesList.includes($(this).children('input').val()) == false) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'contato',
+            eventAction: action,
+            eventLabel: 'preencheu'
+        });
+    }
+});
+
+$('.contato').on('submit', function() {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'contato',
+        eventAction: 'enviado',
+        eventLabel: 'enviado'
+    });
+});
 
 // End Google Analytics
