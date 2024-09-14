@@ -62,6 +62,10 @@ nav ul li a {
     align-items: center;
 }
 
+nav ul li a:hover {
+    color: var(--cor-destaque);
+}
+
 nav ul li a i {
     margin-right: 5px;
 }
@@ -73,13 +77,18 @@ nav ul li a i {
     cursor: pointer;
 }
 
+.menu-toggle:hover {
+    color: var(--cor-destaque);
+}
+
 nav ul.show {
     display: block;
 }
 
 /* Seção Hero */
 .hero {
-    background-image: url('imagem-fundo.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('logo.png');
+    /* Substitua pelo caminho da sua imagem */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -248,7 +257,7 @@ nav ul.show {
 
 .depoimento h4 {
     font-size: 16px;
-    color: var(--cor-destaque);
+    color: var(--cor-secundaria);
 }
 
 /* Contato */
@@ -259,6 +268,20 @@ nav ul.show {
 }
 
 #contato h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--cor-secundaria);
+}
+
+/* Contato */
+.section-map {
+    padding: 60px 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--cor-primaria);
+}
+
+.section-map h2 {
     font-size: 36px;
     margin-bottom: 40px;
     color: var(--cor-secundaria);
@@ -308,13 +331,17 @@ footer {
 
 .social {
     margin-bottom: 10px;
+    /* Remover */
+    display: inline-grid;
+    justify-items: start;
 }
 
 .social a {
     color: var(--cor-texto);
     margin: 0 10px;
-    font-size: 40px;
+    font-size: 20px;
     transition: color 0.3s;
+    text-decoration: none;
 }
 
 .social a:hover {
